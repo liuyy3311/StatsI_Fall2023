@@ -31,12 +31,12 @@ if(p_value<0.1){
 
 #c
 # Calculate the standardized residuals for each cell
-residuals <- (observed - expected) / sqrt(expected)*(1 - (row_sums/total_sum)) * (1 - (col_sums/total_sum))
+residuals <- (observed - expected) / sqrt(expected*(1 - row_sums/total_sum) * (1 - col_sums/total_sum))
 # Create an empty result table
 result_table <- matrix(NA, nrow = 2, ncol = 3)
 colnames(result_table) <- c("Not Stopped", "Bribe requested", "Stopped/given warning")
 rownames(result_table) <- c("Upper class", "Lower class")
-result_table <- format(residuals, digits = 4)
+result_table <- format(residuals, digits = 5)
 result_table
 
 #d
