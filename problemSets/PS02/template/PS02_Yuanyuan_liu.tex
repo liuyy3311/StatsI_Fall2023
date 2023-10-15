@@ -109,21 +109,22 @@
 		\lstinputlisting[language=R,firstline=23,lastline=30]{PS02_Yuanyuan_Liu.R}
 	\begin{itemize}
 		\item \textbf{Result}:\\
+		p-value:0.1502306\\
 		under the significance level a=0.1,we fail to reject null hypothesis,the officer were less likely to solicit a bribe from drivers depending on their class.
 	\end{itemize}
 	
 	\item [(c)] Calculate the standardized residuals for each cell and put them in the table below.
 	\vspace{1cm}
-		\lstinputlisting[language=R,firstline=34,lastline=40]{PS02_Yuanyuan_Liu.R}
+		\lstinputlisting[language=R,firstline=33,lastline=40]{PS02_Yuanyuan_Liu.R}
 	\begin{table}[h]
 		\centering
 		\begin{tabular}{l | c c c }
 			& Not Stopped & Bribe requested & Stopped/given warning \\
 			\\[-1.8ex] 
 			\hline \\[-1.8ex]
-			Upper class  & 0.3220306 &-1.641957 & 1.523026 \\
+			Upper class  & 0.02430 &-0.23574 &  0.20195 \\
 			\\
-			Lower class & -0.3220306 &1.641957  & -1.523026  \\
+			Lower class &-0.08104 &0.35162 & -0.57177  \\
 			
 		\end{tabular}
 	\end{table}
@@ -162,12 +163,12 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\end{itemize}
 	\vspace{1cm}
 	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
-		\lstinputlisting[language=R,firstline=53,lastline=57]{PS02_Yuanyuan_Liu.R}
+		\lstinputlisting[language=R,firstline=52,lastline=57]{PS02_Yuanyuan_Liu.R}
 	\begin{itemize}
 		\item \textbf{Result}:\\
 		Call:
 		lm(formula = Y ~ X)
-		
+		 
 		Residuals:
 		           
 		   
@@ -209,10 +210,11 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 	\item [(c)] Interpret the coefficient estimate for reservation policy. 
 		\begin{itemize}
 		\item \textbf{Result}:\\
-		1.On the confidence interval of 0.05, we can reject H0, the reservation policy has a significant effect on the number of new or repaired drinking water facilities in the villages.\\
-		2.The coefficient of X is estimated to be positive, indicating that there is a positive correlation between the  increase of new water or repaired drinking water facilities in the villages and reservation\\
-		3.with the increase per unit of reservation, the number of new water or repaired drinking water facilities in the villages will increase by 9.252\\
-		4.The t-value and p-value are statistical measures used to assess the significance of coefficient estimates. In this model, the t-value associated with the RESERVATION variable is 2.344, and the corresponding p-value is 0.0197. This indicates that the impact of the reservation policy on the number of water resource facilities is statistically significant. The p-value being below the commonly used significance level (usually 0.05) means that there is strong evidence to reject the null hypothesis, supporting the conclusion that the reservation policy has a meaningful effect on the number of water resource facilities.
+		1.Intercept: It represents the predicted value of the explained variable when the explanatory variable is equal to zero. When the reservation policy is equal to zero, the value of the number of new or repaired drinking water facilities in the villages approximately is 14.738.\\
+		2.Slop:The coefficient of X is estimated to be positive, indicating that there is a positive correlation between the  increase of new water or repaired drinking water facilities in the villages and reservation. with the increase per unit of reservation, the number of new water or repaired drinking water facilities in the villages will increase by 9.252\\
+		3.Std.Error:Standard Error is an estimate of the standard deviation of the regression coefficient estimate in regression analysis. It measures the uncertainty or variability in the coefficient estimates in a regression model. I this model, the estimate of X is 2.344, indicates a more precise estimate of the coefficient.\\
+		4.t-value and p-value: t-value and p-value are used to measure the significance of the coefficient estimates. In this model, the t-value of the reservation variable is 2.344, the p-value is 0.0197. That means on the confidence interval of 0.05, we can reject H0, the reservation policy has a significant effect on the number of new or repaired drinking water facilities in the villages.The p-value of intercept is 4.22e-10,is approximately equal to zero, there is sufficient evidence to conclude that the intercept differs significantly from zero\\
+		
 	\end{itemize}
 \end{enumerate}
 
